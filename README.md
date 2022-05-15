@@ -1,7 +1,6 @@
 ## How to use this base code
 
-The key thing is that we learn from this video:
-
+Source of knowledge:
 [Jetstream/Fortify Multi-Auth: Roles, Permissions and Guards](https://www.youtube.com/watch?v=NiQSNjWKLfU)  by Laravel Daily, with customisation for our project.
 
 ## Notes
@@ -23,8 +22,10 @@ The key thing is that we learn from this video:
 Let's get started. You should follow these steps to get it up and running in your local dev.
 
 - GitHub clone this project
+- php artisan migrate
+- php artisan db:seed --class=RoleSeeder ▶️ this will seed the Roles table. You need this data before you can create new accounts as app/Actions/Fortify/CreateNewUser.php will look up this table 
+
+## Useful commands
 - php artisan make:model Role -m ▶️ this will generate \Database\Migrations\XXXXX_create_roles_table.php
 - php artisan make:seeder RoleSeeder ▶️ this will generate \Database\Seeders\RoleSeeder.php
 - php artisan make:migration add_roles_fields_to_users_table ▶️ this will generate \Database\Migrations\XXXXX_add_roles_to_users_table.php
-- php artisan migrate
-- php artisan db:seed --class=RoleSeeder ▶️ this will seed the Roles table. You need this data before you can create new accounts as app/Actions/Fortify/CreateNewUser.php will look up this table 
