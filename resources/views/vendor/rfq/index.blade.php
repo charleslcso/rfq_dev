@@ -1,4 +1,4 @@
-<x-teacher-layout>
+<x-vendor-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('RFQs') }}
@@ -10,4 +10,4 @@
             Accessible only for vendors.
         </div>
     </div>
-</x-teacher-layout>
+</x-vendor-layout>
