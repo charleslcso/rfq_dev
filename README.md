@@ -22,6 +22,9 @@ Source of knowledge:
 Let's get started. You should follow these steps to get it up and running in your local dev.
 
 - GitHub clone this project
+- npm install
+- composer update
+- prepare .env file (for database connection)
 - php artisan migrate
 - php artisan db:seed --class=RoleSeeder ▶️ this will seed the Roles table. You need this data before you can create new accounts as app/Actions/Fortify/CreateNewUser.php will look up this table 
 
