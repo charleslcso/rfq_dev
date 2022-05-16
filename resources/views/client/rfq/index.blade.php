@@ -8,6 +8,7 @@
     <div>
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
             Accessible only for Clients.
+            <?php include resource_path() . '/views/client/rfq/jotform/jotform-rfq.html'; ?>
         </div>
     </div>
 </x-student-layout>
