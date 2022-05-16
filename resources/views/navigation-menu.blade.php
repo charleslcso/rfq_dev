@@ -16,23 +16,26 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
 
-                    @if (auth()->user()->role_id == 1)
+                    @can('is-admin')
                         <x-jet-nav-link href="{{ route('admin.rfq.index') }}" :active="request()->routeIs('admin.rfq.index')">
                             {{ __('RFQ') }}
                         </x-jet-nav-link>
-                    @endif
+                    @endcan
 
-                    @if (auth()->user()->role_id == 2)
+                    @can('is-client')
                         <x-jet-nav-link href="{{ route('client.rfq.index') }}" :active="request()->routeIs('client.rfq.index')">
-                            {{ __('RFQ') }}
+                            {{ __('My RFQs') }}
                         </x-jet-nav-link>
-                    @endif
+                        <x-jet-nav-link href="{{ route('client.apply-rfq.index') }}" :active="request()->routeIs('client.apply-rfq.index')">
+                            {{ __('Apply RFQ') }}
+                        </x-jet-nav-link>
+                    @endcan
 
-                    @if (auth()->user()->role_id == 3)
+                    @can('is-vendor')
                         <x-jet-nav-link href="{{ route('vendor.rfq.index') }}" :active="request()->routeIs('vendor.rfq.index')">
-                            {{ __('RFQ') }}
+                            {{ __('RFQs') }}
                         </x-jet-nav-link>
-                    @endif
+                    @endcan
                 </div>
             </div>
 

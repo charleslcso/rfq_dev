@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Vendors;
+namespace App\Http\Controllers\Clients;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RFQReplyController extends Controller
+class ApplyRFQController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,9 @@ class RFQReplyController extends Controller
 		/*
 		 * CS
 		 *
-		 * 'vendor.rfq.index' is represents the directory path to /resources/views/vendor/rfq/index.blade.php
+		 * 'client.rfq.apply-rfq' is represents the directory path to /resources/views/client/rfq/apply-rfq.blade.php
 		 */
-		return view('vendor.rfq.index');
+        return view('client.rfq.apply-rfq');
     }
 
     /**
