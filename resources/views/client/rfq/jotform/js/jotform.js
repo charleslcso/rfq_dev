@@ -13766,10 +13766,13 @@ var JotForm = {
         //}
         insertEl.select('.form-error-message').invoke('remove');
 
+        error_message_span = new Element('span', {className: 'error-navigation-message'});
+        error_message_span.innerText= message;
+
         insertEl.insert(new Element('div', {
             className: 'form-error-message',
             role: 'alert'
-        }).insert('<img src="' + preLink + 'images/exclamation-octagon.png"> ' + message).insert(
+        }).insert('<img src="' + preLink + 'images/exclamation-octagon.png"> ').insert(error_message_span).insert(
             new Element('div', {className: 'form-error-arrow'}).insert(new Element('div', {className: 'form-error-arrow-inner'}))));
 
         JotForm.iframeHeightCaller();

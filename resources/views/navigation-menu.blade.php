@@ -24,13 +24,22 @@
 
                     @if (auth()->user()->role_id == 2)
                         <x-jet-nav-link href="{{ route('client.rfq.index') }}" :active="request()->routeIs('client.rfq.index')">
-                            {{ __('RFQ') }}
+                            {{ __('My RFQ') }}
+                        </x-jet-nav-link>
+                         <x-jet-nav-link href="{{ route('client.apply-rfq.index') }}" :active="request()->routeIs('client.apply-rfq.index')">
+                            {{ __('Apply RFQ') }}
                         </x-jet-nav-link>
                     @endif
 
                     @if (auth()->user()->role_id == 3)
-                        <x-jet-nav-link href="{{ route('vendor.rfq.index') }}" :active="request()->routeIs('vendor.rfq.index')">
-                            {{ __('RFQ') }}
+                        <x-jet-nav-link href="{{ route('vendor.list-all-rfqs.index') }}" :active="request()->routeIs('vendor.list-all-rfqs.index')">
+                            {{ __('All RFQs') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('vendor.pend-quotations.index') }}" :active="request()->routeIs('vendor.pend-quotations.index')">
+                            {{ __('Pending RFQs') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('vendor.submitted-quotations.index') }}" :active="request()->routeIs('vendor.submitted-quotations.index')">
+                            {{ __('Submitted RFQs') }}
                         </x-jet-nav-link>
                     @endif
                 </div>

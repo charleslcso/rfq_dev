@@ -1,13 +1,14 @@
-<x-teacher-layout>
+<x-student-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('RFQ List') }}
+            {{ __('All RFQs') }}
         </h2>
     </x-slot>
 
     <div>
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-            Accessible only for vendors.
+            //TODO
+            List out all RFQs
         </div>
     </div>
-</x-teacher-layout>
+</x-student-layout>

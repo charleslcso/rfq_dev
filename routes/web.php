@@ -40,12 +40,18 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::group(['middleware' => 'auth'], function() {
 	Route::group(['middleware' => 'role:client', 'prefix' => 'client', 'as' => 'client.'], function () {
 		Route::resource('rfq', \App\Http\Controllers\Clients\RFQController::class);
+		Route::resource('apply-rfq', \App\Http\Controllers\Clients\ApplyRFQController::class);
+		Route::resource('handle-jotform-submission', \App\Http\Controllers\Clients\HandleJotformSubmissionController::class);
 	});
 	Route::group(['middleware' => 'role:vendor', 'prefix' => 'vendor', 'as' => 'vendor.'], function () {
-		Route::resource('rfq', \App\Http\Controllers\Vendors\RFQReplyController::class);
+		Route::resource('list-all-rfqs', \App\Http\Controllers\Vendors\ListAllRFQsController::class);
+		Route::resource('pend-quotations', \App\Http\Controllers\Vendors\PendQuotationsController::class);
+		Route::resource('submitted-quotations', \App\Http\Controllers\Vendors\SubmittedQuotationsController::class);
 	});
 	Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
 		Route::resource('rfq', \App\Http\Controllers\Admin\RFQAdminController::class);
 	});
 });
+
+
 

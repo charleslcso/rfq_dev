@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Vendors;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RFQReplyController extends Controller
+class PendQuotationsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,8 @@ class RFQReplyController extends Controller
      */
     public function index()
     {
-		return view('vendor.rfq.index');
+        // from --> resources/views/client/rfq/rfq-apply.blade.php
+        return view('vendor.rfq.quotations-pend');
     }
 
     /**
