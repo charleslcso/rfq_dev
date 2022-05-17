@@ -13,6 +13,11 @@ class ListAllRFQsController extends Controller
      */
     public function index()
     {
+        /*
+		 * CS
+		 *
+		 * 'vendor.rfq.index' is represents the directory path to /resources/views/vendor/rfq/index.blade.php
+		 */
 		return view('vendor.rfq.rfqs-all-list');
     }
 

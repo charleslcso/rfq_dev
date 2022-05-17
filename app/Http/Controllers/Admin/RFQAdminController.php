@@ -14,6 +14,11 @@ class RFQAdminController extends Controller
      */
     public function index()
     {
+		/*
+		 * CS
+		 *
+		 * 'admin.rfq.index' is represents the directory path to /resources/views/admin/rfq/index.blade.php
+		 */
 		return view('admin.rfq.index');
     }
 

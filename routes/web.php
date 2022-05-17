@@ -37,11 +37,34 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::group(['middleware' => 'auth'], function() {
+/*
+ * You can use:
+ *
+ * Route::group(['middleware' => ''], Closure);
+ *
+ * or
+ *
+ * Route::middleware([''])->group(Closure);
+ *
+ * But you cannot place additional parameters for Route::group([]) into ->group()! Not the same!
+ */
+//Route::group(['middleware' => 'auth'], function() {
+//	Route::group(['middleware' => 'role:client', 'prefix' => 'client', 'as' => 'client.'], function () {
+//		Route::resource('rfq', \App\Http\Controllers\Clients\RFQController::class);
+//	});
+//	Route::group(['middleware' => 'role:vendor', 'prefix' => 'vendor', 'as' => 'vendor.'], function () {
+//		Route::resource('rfq', \App\Http\Controllers\Vendors\RFQReplyController::class);
+//	});
+//	Route::group(['middleware' => 'role:admin', 'prefix' => 'admin', 'as' => 'admin.'], function () {
+//		Route::resource('rfq', \App\Http\Controllers\Admin\RFQAdminController::class);
+//	});
+//});
+
+Route::middleware(['auth'])->group(function() {					// CS
 	Route::group(['middleware' => 'role:client', 'prefix' => 'client', 'as' => 'client.'], function () {
 		Route::resource('rfq', \App\Http\Controllers\Clients\RFQController::class);
-		Route::resource('apply-rfq', \App\Http\Controllers\Clients\ApplyRFQController::class);
-		Route::resource('handle-jotform-submission', \App\Http\Controllers\Clients\HandleJotformSubmissionController::class);
+		Route::resource('apply-rfq', \App\Http\Controllers\Clients\ApplyRFQController::class); // JY | CS
+		Route::resource('handle-jotform-submission', \App\Http\Controllers\Clients\HandleJotformSubmissionController::class); // JY
 	});
 	Route::group(['middleware' => 'role:vendor', 'prefix' => 'vendor', 'as' => 'vendor.'], function () {
 		Route::resource('list-all-rfqs', \App\Http\Controllers\Vendors\ListAllRFQsController::class);
@@ -52,6 +75,3 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::resource('rfq', \App\Http\Controllers\Admin\RFQAdminController::class);
 	});
 });
-
-
-

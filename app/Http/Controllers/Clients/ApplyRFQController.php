@@ -13,8 +13,13 @@ class ApplyRFQController extends Controller
      */
     public function index()
     {
+		/*
+		 * CS
+		 *
+		 * 'client.rfq.apply-rfq' is represents the directory path to /resources/views/client/rfq/apply-rfq.blade.php
+		 */
         // from --> resources/views/client/rfq/rfq-apply.blade.php
-        return view('client.rfq.rfq-apply');
+        return view('client.rfq.apply-rfq');
     }
 
     /**
@@ -83,4 +88,3 @@ class ApplyRFQController extends Controller
         //
     }
 }
-

@@ -14,6 +14,11 @@ class RFQController extends Controller
      */
     public function index()
     {
+		/*
+		 * CS
+		 *
+		 * 'client.rfq.index' is represents the directory path to /resources/views/client/rfq/index.blade.php
+		 */
         return view('client.rfq.index');
     }
 
