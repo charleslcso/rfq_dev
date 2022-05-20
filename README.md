@@ -3,6 +3,9 @@
 Source of knowledge:
 [Jetstream/Fortify Multi-Auth: Roles, Permissions and Guards](https://www.youtube.com/watch?v=NiQSNjWKLfU)  by Laravel Daily, with customisation for our project.
 
+## TODO
+- (20/05/2022)Check Stripe payment status: if succeeded -> insert into DB; if failed -> return with error message
+
 ## Notes
 - uses PHP 8.x (get this up in your machine first)
 - uses Laravel 9.x
