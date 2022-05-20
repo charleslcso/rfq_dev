@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 /*
 * original code
@@ -65,6 +68,9 @@ Route::middleware(['auth'])->group(function() {					// CS
 		Route::resource('rfq', \App\Http\Controllers\Clients\RFQController::class);
 		Route::resource('apply-rfq', \App\Http\Controllers\Clients\ApplyRFQController::class); // JY | CS
 		Route::resource('handle-jotform-submission', \App\Http\Controllers\Clients\HandleJotformSubmissionController::class); // JY
+		// Route::get('pay-rfq', [\App\Http\Controllers\Clients\StripeController::class, 'stripe']);
+		// Route::get('apply-rfq', \App\Http\Controllers\Clients\ApplyRFQController::class);
+		// Route::post('stripe', [\App\Http\Controllers\Clients\StripeController::class, 'stripePost'])->name('stripe.post');
 	});
 	Route::group(['middleware' => 'role:vendor', 'prefix' => 'vendor', 'as' => 'vendor.'], function () {
 		Route::resource('list-all-rfqs', \App\Http\Controllers\Vendors\ListAllRFQsController::class);

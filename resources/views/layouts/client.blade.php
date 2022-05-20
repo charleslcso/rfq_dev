@@ -15,6 +15,20 @@
 
         @livewireStyles
 
+        <style>
+            /**
+            * The CSS shown here will not be introduced in the Quickstart guide, but shows
+            * how you can use CSS to style your Element's container.
+            */
+            .form-fields-container{
+                display: flex;
+                justify-content: space-evenly;
+            }
+            #btnSubmit{
+                background-color: black;
+            }
+            
+        </style>
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
@@ -38,7 +52,7 @@
         </div>
 
         @stack('modals')
-
+        @stack('scripts')
         @livewireScripts
     </body>
 </html>
